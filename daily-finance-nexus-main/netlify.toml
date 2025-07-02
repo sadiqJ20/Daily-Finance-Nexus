@@ -1,7 +1,10 @@
 [build]
-  base = "daily-finance-nexus-main"
+  base = "client"
   command = "npm run build"
-  publish = "dist"
+  publish = "client/dist"
 
 [dev]
-  framework = "vite" 
+  framework = "vite"
+
+[build.environment]
+  NODE_VERSION = "20" 

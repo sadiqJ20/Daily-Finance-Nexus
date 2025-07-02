@@ -21,6 +21,10 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
+  preview: {
+    port: 4173,
+    allowedHosts: ["daily-finance-dmv5.onrender.com"]
+  },
   plugins: [
     react(),
   ].filter(Boolean),
