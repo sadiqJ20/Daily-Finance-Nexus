@@ -1,12 +1,15 @@
 // API service for communicating with the backend
 
 const API_BASE = import.meta.env.VITE_API_URL || '/api';
+console.log('🔍 Using API URL:', import.meta.env.VITE_API_URL); // Debug log for API URL
 
 /**
  * Typed JSON fetch – throws for non-2xx responses.
  */
 export async function apiFetch<T>(endpoint: string, init: RequestInit = {}): Promise<T> {
-  const res = await fetch(`${API_BASE}${endpoint}`, {
+  const fullUrl = `${API_BASE}${endpoint}`;
+  console.log('📡 Requesting:', fullUrl, init); // Debug log for each request
+  const res = await fetch(fullUrl, {
     headers: { 'Content-Type': 'application/json', ...(init.headers || {}) },
     ...init,
   });
