@@ -11,6 +11,7 @@ export async function apiFetch<T>(endpoint: string, init: RequestInit = {}): Pro
   console.log('📡 Requesting:', fullUrl, init); // Debug log for each request
   const res = await fetch(fullUrl, {
     headers: { 'Content-Type': 'application/json', ...(init.headers || {}) },
+    credentials: 'include', // Always include credentials for cross-origin cookies
     ...init,
   });
 
