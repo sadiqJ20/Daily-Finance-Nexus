@@ -13,6 +13,7 @@ const signToken = (user) =>
 
 /* Finance / Shopkeeper Registration */
 router.post('/register', async (req, res) => {
+  console.log('🔵 /register route was called');
   try {
     const { role, name, financeName, uniqueId, loanId, password } = req.body;
 
@@ -22,6 +23,7 @@ router.post('/register', async (req, res) => {
     const passwordHash = await bcrypt.hash(password, 10);
 
     const user = await User.create({ role, name, financeName, uniqueId, loanId, passwordHash });
+    console.log('User registered:', user);
     const token = signToken(user);
 
     res.status(201).json({ token });
@@ -47,6 +49,11 @@ router.post('/login', async (req, res) => {
     console.error(err);
     res.status(500).json({ message: 'Server error' });
   }
+});
+
+// Test route for connectivity
+router.get('/test', (req, res) => {
+  res.json({ message: 'Auth route is working' });
 });
 
 export default router;
