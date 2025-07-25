@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://daily-finance-nexus-1.onrender.com',
+  origin: ['https://daily-finance-nexus-1.onrender.com', 'http://localhost:5173', 'http://localhost:8080', 'https://animated-kangaroo-47005c.netlify.app'],
   credentials: true
 }));
 app.use(express.json());
