@@ -1,5 +1,5 @@
 [build]
-  base = "."
+  base = "daily-finance-nexus-main"
   command = "cd client && npm run build"
   publish = "client/dist"
 
