@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/hooks/use-toast';
-import { Building2, User, UserPlus } from 'lucide-react';
+import { User, UserPlus } from 'lucide-react';
 
 interface User {
   id: string;
@@ -298,7 +298,6 @@ const Index = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <Building2 className="h-12 w-12 text-blue-600 mr-2" />
             <h1 className="text-3xl font-bold text-gray-900">DFCS</h1>
           </div>
           <p className="text-gray-600">Daily Finance Collection System</p>
